@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+bentoml = {extras = ["all"], version = "*"}
+xgboost = "*"
+jupyter = "*"
+ipykernel = "*"
+scikit-learn = "*"
+locust = "*"
+gevent = "==20.9.0"
+greenlet = "==0.4.17"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
