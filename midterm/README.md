@@ -68,6 +68,4 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    Run the above command replacing `tag value`. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`. Launch the Swagger UI from the browser, and try it out.
    Sample output
-   ```
    <img width="876" alt="image" src="https://user-images.githubusercontent.com/7212518/198895457-2d74c13a-0fea-4df2-ad72-a45be9007e67.png">
-   ```
