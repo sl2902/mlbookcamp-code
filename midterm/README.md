@@ -14,10 +14,8 @@ The response variable is: `Car Purchase Amount`
 Three models were built and trained with their respective hyperparameters: Linear Regression, RandomForest Regressor and XGB Regressor. Based on the metric - RMSE, Linear Regression was the best performing model of the lot.
 
 # How to run and serve the model
-```git clone the repo. 
-   git clone https://github.com/sl2902/mlbookcamp-code.git
+   ```git clone https://github.com/sl2902/mlbookcamp-code.git```
    If you would like to only clone the midterm subdirectory, then run the following commands. Note: this requires git version >= 2.30.0
-   git clone --depth 1 --filter=blob:none --sparse https://github.com/sl2902/mlbookcamp-code.git
-   cd mlbookcamp-code
-   git sparse-checkout set midterm
- ```
+   ```git clone --depth 1 --filter=blob:none --sparse https://github.com/sl2902/mlbookcamp-code.git. 
+      cd mlbookcamp-code
+      git sparse-checkout set midterm```
