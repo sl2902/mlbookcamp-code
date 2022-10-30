@@ -37,7 +37,7 @@ Three models were built and trained with their respective hyperparameters: Linea
    │   └── Car_purchase_price_prediction.ipynb
    └── predict.py
    ```
-   Create a directory called `data` and download the file from (Car purchasing.csv)[https://www.kaggle.com/datasets/yashpaloswal/ann-car-sales-price-prediction?resource=download]
+   Create a directory called `data` and download the file from [Car purchasing.csv](https://www.kaggle.com/datasets/yashpaloswal/ann-car-sales-price-prediction?resource=download)
    ```
    mkdir data; cd data
    ```
