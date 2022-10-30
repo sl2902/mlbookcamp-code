@@ -23,6 +23,7 @@ Three models were built and trained with their respective hyperparameters: Linea
    cd mlbookcamp-code
    git sparse-checkout set midterm
    ```
+   Switch to subdirectory `midterm`
    ```
    cd midterm
    ```
@@ -41,7 +42,7 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    mkdir data; cd data
    ```
-   Activate the environment
+   Back in the `midterm` subdirectory, activate the environment
    ```
    pipenv shell
    ```
@@ -57,7 +58,7 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    bentoml build
    ```
-   Build a Docker container using bentoml. Replace the `tag value` with the `tag` from the above command
+   Build a Docker container using bentoml. Replace the `tag value` with the successfully built model `tag` from the above command
    ```
    bentoml containerize <<tag value>>
    ```
@@ -65,5 +66,4 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    docker run -it --rm -p 3000:3000 <<tag value>> serve --production
    ```
-   Run the above command replacing `tag value`. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`
-   Launch the Swagger UI from the browser, and try it out.
+   Run the above command replacing `tag value`. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`. Launch the Swagger UI from the browser, and try it out.
