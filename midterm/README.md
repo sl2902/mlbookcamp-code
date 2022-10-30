@@ -31,6 +31,7 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    ├── Pipfile
    ├── Pipfile.lock
+   ├── README.md
    ├── bentofile.yaml
    ├── model
    │   └── train.py
