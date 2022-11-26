@@ -9,7 +9,7 @@ from urllib import request
 from PIL import Image
 
 
-MODEL_NAME = os.getenv('MODEL_NAME', '../data/dino-dragon-model.tflite')
+MODEL_NAME = os.getenv('MODEL_NAME', 'dino-dragon-model.tflite')
 
 
 def download_image(url):
