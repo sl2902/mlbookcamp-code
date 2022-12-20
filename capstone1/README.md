@@ -30,7 +30,7 @@ Three models were built and trained with their respective hyperparameters: Logis
    ```
    git clone https://github.com/sl2902/mlbookcamp-code.git
    ```
-   If you would like to only clone the `midterm` subdirectory, then run the following commands. Note: this requires git version >= 2.30.0
+   If you would like to only clone the `capstone1` subdirectory, then run the following commands. Note: this requires git version >= 2.30.0
    ```
    git clone --depth 1 --filter=blob:none --sparse https://github.com/sl2902/mlbookcamp-code.git;
    cd mlbookcamp-code;
@@ -72,7 +72,7 @@ Three models were built and trained with their respective hyperparameters: Logis
    ```
    bentoml build
    ```
-   Make sure you have Docker installed. Build a Docker container using bentoml. Replace the `tag value` with the successfully built model `tag` from the above command
+   Make sure you have Docker installed, and that it is running. Build a Docker container using bentoml. Replace the `tag value` with the successfully built model `tag` from the above command
    ```
    bentoml containerize <<tag value>>
    ```
@@ -80,6 +80,27 @@ Three models were built and trained with their respective hyperparameters: Logis
    ```
    docker run -it --rm -p 3000:3000 <<tag value>> serve --production
    ```
-   Run the above command replacing `tag value`. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`. </br>
+   Run the above command making sure `tag value` contains the latest id. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`. </br>
+
+   The schema for the POST API is as follows:
+- customer_age: int
+- dependent_count: int
+- gender: str
+- education_level: str
+- marital_status: str 
+- income_category: str 
+- card_category: str 
+- credit_limit: int
+- months_on_book: int 
+- total_relationship_count: int
+- total_revolving_bal: float
+
+For the `str` fields, the following are all the valid values that the respective fields take:
+- `gender` - M, F
+- `education_level` - Graduate, High School, Unknown, Uneducated, College, Post-Graduate, Doctorate
+- `marital_status` - Married, Single, Unknown, Divorced
+- `income_category` - Less than $40K, $40K - $60K, $80K - $120K, $60K - $80K, Unknown, $120K +
+- `card_category` - Blue, Silver, Gold, Platinum
+
    Launch the Swagger UI from the browser, and try it out. Sample output
    <img width="876" alt="image" src="https://user-images.githubusercontent.com/7212518/198895457-2d74c13a-0fea-4df2-ad72-a45be9007e67.png">
