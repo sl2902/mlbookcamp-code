@@ -102,5 +102,26 @@ For the `str` fields, the following are all the valid values that the respective
 - `income_category` - Less than $40K, $40K - $60K, $80K - $120K, $60K - $80K, Unknown, $120K +
 - `card_category` - Blue, Silver, Gold, Platinum
 
+Example you can play with
+```
+{
+  "customer_age": 45,
+  "dependent_count": 3,
+  "gender": "M",
+  "education_level": "Graduate",
+  "marital_status": "Single",
+  "income_category": "$120K +",
+  "card_category": "Blue",
+  "credit_limit": 2400,
+  "months_on_book": 0,
+  "total_relationship_count": 1,
+  "total_revolving_bal": 1343
+}
+```
+
+
    Launch the Swagger UI from the browser, and try it out. Sample output
-   <img width="876" alt="image" src="https://user-images.githubusercontent.com/7212518/198895457-2d74c13a-0fea-4df2-ad72-a45be9007e67.png">
+   <img width="1680" alt="image" src="https://user-images.githubusercontent.com/7212518/208729168-f8038a49-8cc3-40db-ae15-89620e427b20.png">
+
+<img width="1424" alt="image" src="https://user-images.githubusercontent.com/7212518/208729251-00fa9c9e-b565-4a0b-8a72-da5808a89787.png">
+
