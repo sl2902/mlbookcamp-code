@@ -53,7 +53,7 @@ Three models were built and trained with their respective hyperparameters: Logis
    │   └── Credit_card_churn.ipynb
    └── predict.py
    ```
-   Create a directory called `data` and download the file from [BankChurners.csv](https://www.kaggle.com/datasets/whenamancodes/credit-card-customers-prediction?resource=download)
+   Create a directory called `data` and download the file from [Kaggle](https://www.kaggle.com/datasets/whenamancodes/credit-card-customers-prediction?resource=download)
    ```
    mkdir data; cd data
    ```
