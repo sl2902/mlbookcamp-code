@@ -1,17 +1,30 @@
-# Car purchase
-The objective of this exercise is to build, train and serve a model which predicts how much a customer would pay for a car based on certain customer attributes. The attributes describing a customer are as follows:</br>
-   -  `customer name`</br>
-   -  `customer email` </br>
-   -  `country` </br>
-   -  `gender` </br>
-   -  `age` </br>
-   -  `annual salary` </br>
-   -  `credit card debt`</br>
-   -  `net worth`</br>
-The response variable is: `Car Purchase Amount`
+# Credit card churn predictor
+The objective of this exercise is to build, train and serve a model which predicts whether a bank's customer is likely to churn based on their credit card history. The attributes describing a customer are as follows:</br>
+- `CLIENTNUM`  - Unique identifier for the customer holding the account<br/>
+- `Attrition_Flag`   - Internal event (customer activity) variable - if the account is closed then 1 else 0<br/>
+- `Customer_Age`  - Demographic variable - Customer's Age in Years<br/>
+- `Gender`  - Demographic variable - M=Male, F=Female<br/>
+- `Dependent_count`  - Demographic variable - Number of dependents<br/>
+- `Education_Level`  - Demographic variable - Educational Qualification of the account holder (example: high school, college graduate, etc.)<br/>
+- `Marital_Status`   - Demographic variable - Married, Single, Divorced, Unknown<br/>
+- `Income_Category`  - Demographic variable - Annual Income Category of the account holder (< $40K, $40K - 60K, $60K - $80K, $80K-$120K, ><br/>
+- `Card_Category` - Product Variable - Type of Card (Blue, Silver, Gold, Platinum)<br/>
+- `Monthsonbook`  - Period of relationship with bank<br/>
+- `TotalRelationshipcount` - Total no. of products held by the customer<br/>
+- `MonthsInactive12_mon`   - No. of months inactive in the last 12 months<br/>
+- `ContactsCount12_mon` - No. of Contacts in the last 12 months<br/>
+- `Credit_Limit`  - Credit Limit on the Credit Card<br/>
+- `TotalRevolvingBal`   - Total Revolving Balance on the Credit Card<br/>
+- `AvgOpenTo_Buy` - Open to Buy Credit Line (Average of last 12 months)<br/>
+- `TotalAmtChngQ4Q1` - Change in Transaction Amount (Q4 over Q1)<br/>
+- `TotalTransAmt` - Total Transaction Amount (Last 12 months)<br/>
+- `TotalTransCt`  - Total Transaction Count (Last 12 months)<br/>
+- `TotalCtChngQ4Q1`  - Change in Transaction Count (Q4 over Q1)<br/>
+- `AvgUtilizationRatio` - Average Card Utilization Ratio<br/>
+The response variable is: `Attrition flag`
 
 # Model selection
-Three models were built and trained with their respective hyperparameters: Linear Regression, RandomForest Regressor and XGB Regressor. Based on the metric - RMSE, Linear Regression was the best performing model of the lot.
+Three models were built and trained with their respective hyperparameters: Logistic Regression, RandomForest Classifier and XGB Classifier. Based on the metric - ROC AUC, Logistic Regression was the best performing model of the lot.
 
 # How to run and serve the model
    ```
@@ -21,13 +34,13 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    git clone --depth 1 --filter=blob:none --sparse https://github.com/sl2902/mlbookcamp-code.git;
    cd mlbookcamp-code;
-   git sparse-checkout set midterm
+   git sparse-checkout set capstone1
    ```
-   Switch to subdirectory `midterm`
+   Switch to subdirectory `capstone1`
    ```
-   cd midterm
+   cd capstone1
    ```
-   This should be the structure of the `midterm` subdirectory
+   This should be the structure of the `capstone1` subdirectory
    ```
    ├── Pipfile
    ├── Pipfile.lock
@@ -36,14 +49,14 @@ Three models were built and trained with their respective hyperparameters: Linea
    ├── model
    │   └── train.py
    ├── notebooks
-   │   └── Car_purchase_price_prediction.ipynb
+   │   └── Credit_card_churn.ipynb
    └── predict.py
    ```
-   Create a directory called `data` and download the file from [Car purchasing.csv](https://www.kaggle.com/datasets/yashpaloswal/ann-car-sales-price-prediction?resource=download)
+   Create a directory called `data` and download the file from [BankChurners.csv](https://www.kaggle.com/datasets/whenamancodes/credit-card-customers-prediction?resource=download)
    ```
    mkdir data; cd data
    ```
-   Back in the `midterm` subdirectory, activate the environment
+   Back in the `capstone1` subdirectory, activate the environment
    ```
    pipenv shell
    ```
@@ -51,9 +64,9 @@ Three models were built and trained with their respective hyperparameters: Linea
    ```
    pipenv sync
    ```
-   In the `midterm` subdirectory, run the following command to train and save the best model
+   In the `captone1` subdirectory, run the following command to train and save the best model
    ```
-   python model/train.py --file-path ./data/car_purchasing.csv
+   python model/train.py --file-path ./data/BankChurners.csv
    ```
    Build bentoml
    ```
