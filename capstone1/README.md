@@ -21,6 +21,7 @@ The objective of this exercise is to build, train and serve a model which predic
 - `TotalTransCt`  - Total Transaction Count (Last 12 months)<br/>
 - `TotalCtChngQ4Q1`  - Change in Transaction Count (Q4 over Q1)<br/>
 - `AvgUtilizationRatio` - Average Card Utilization Ratio<br/>
+
 The response variable is: `Attrition flag`
 
 # Model selection
