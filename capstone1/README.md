@@ -76,10 +76,15 @@ Three models were built and trained with their respective hyperparameters: Logis
    ```
    bentoml containerize <<tag value>>
    ```
+   Output from the above command, which also shows the command for the next steps below
+   
+   <img width="1786" alt="image" src="https://user-images.githubusercontent.com/7212518/208729983-23730ab3-af6e-405e-99a6-259659a8613a.png">
+
    Once the Docker image is successfully built, copy the docker command from the standard output, it should look something like this:
    ```
    docker run -it --rm -p 3000:3000 <<tag value>> serve --production
    ```
+  
    Run the above command making sure `tag value` contains the latest id. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`. </br>
 
    The schema for the POST API is as follows:
