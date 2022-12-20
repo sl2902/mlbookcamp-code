@@ -81,7 +81,7 @@ Three models were built and trained with their respective hyperparameters: Logis
    
    <img width="1786" alt="image" src="https://user-images.githubusercontent.com/7212518/208729983-23730ab3-af6e-405e-99a6-259659a8613a.png">
 
-   Once the Docker image is successfully built, copy the docker command from the standard output, it should look something like this:
+   Once the Docker image is successfully built, copy the docker command from the standard output shown above, it should look something like this:
    ```
    docker run -it --rm -p 3000:3000 <<tag value>> serve --production
    ```
