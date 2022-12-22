@@ -21,6 +21,7 @@ The objective of this exercise is to build, train and serve a model which predic
 - `TotalTransCt`  - Total Transaction Count (Last 12 months)<br/>
 - `TotalCtChngQ4Q1`  - Change in Transaction Count (Q4 over Q1)<br/>
 - `AvgUtilizationRatio` - Average Card Utilization Ratio<br/>
+
 The response variable is: `Attrition flag`
 
 # Model selection
@@ -52,7 +53,7 @@ Three models were built and trained with their respective hyperparameters: Logis
    │   └── Credit_card_churn.ipynb
    └── predict.py
    ```
-   Create a directory called `data` and download the file from [BankChurners.csv](https://www.kaggle.com/datasets/whenamancodes/credit-card-customers-prediction?resource=download)
+   Create a directory called `data` and download the file from [Kaggle](https://www.kaggle.com/datasets/whenamancodes/credit-card-customers-prediction?resource=download)
    ```
    mkdir data; cd data
    ```
@@ -76,10 +77,15 @@ Three models were built and trained with their respective hyperparameters: Logis
    ```
    bentoml containerize <<tag value>>
    ```
-   Once the Docker image is successfully built, copy the docker command from the standard output, it should look something like this:
+   Output from the above command, which also shows the command for the next steps below
+   
+   <img width="1786" alt="image" src="https://user-images.githubusercontent.com/7212518/208729983-23730ab3-af6e-405e-99a6-259659a8613a.png">
+
+   Once the Docker image is successfully built, copy the docker command from the standard output shown above, it should look something like this:
    ```
    docker run -it --rm -p 3000:3000 <<tag value>> serve --production
    ```
+  
    Run the above command making sure `tag value` contains the latest id. Once Docker is running, it should provide the following Swagger UI URI which looks like this `http://0.0.0.0:3000`. </br>
 
    The schema for the POST API is as follows:
@@ -102,5 +108,26 @@ For the `str` fields, the following are all the valid values that the respective
 - `income_category` - Less than $40K, $40K - $60K, $80K - $120K, $60K - $80K, Unknown, $120K +
 - `card_category` - Blue, Silver, Gold, Platinum
 
+Example you can play with
+```
+{
+  "customer_age": 45,
+  "dependent_count": 3,
+  "gender": "M",
+  "education_level": "Graduate",
+  "marital_status": "Single",
+  "income_category": "$120K +",
+  "card_category": "Blue",
+  "credit_limit": 2400,
+  "months_on_book": 0,
+  "total_relationship_count": 1,
+  "total_revolving_bal": 1343
+}
+```
+
+
    Launch the Swagger UI from the browser, and try it out. Sample output
-   <img width="876" alt="image" src="https://user-images.githubusercontent.com/7212518/198895457-2d74c13a-0fea-4df2-ad72-a45be9007e67.png">
+   <img width="1680" alt="image" src="https://user-images.githubusercontent.com/7212518/208729168-f8038a49-8cc3-40db-ae15-89620e427b20.png">
+
+<img width="1424" alt="image" src="https://user-images.githubusercontent.com/7212518/208729251-00fa9c9e-b565-4a0b-8a72-da5808a89787.png">
+
