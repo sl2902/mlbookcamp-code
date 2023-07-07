@@ -12,6 +12,9 @@ scikit-learn = "*"
 locust = "*"
 gevent = "==20.9.0"
 greenlet = "==0.4.17"
+tqdm = "*"
+joblib = "*"
+evidently = "*"
 
 [dev-packages]
 
